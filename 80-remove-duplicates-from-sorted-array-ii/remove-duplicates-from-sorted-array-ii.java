@@ -1,13 +1,13 @@
 class Solution {
     public int removeDuplicates(int[] nums) {
-        int l = 2;
-        for(int i = 2;i<nums.length;i++)
-        {
-            if(nums[i]!=nums[l-2]){
-                nums[l]=nums[i];
-                l++;
+        int slow = 2;
+        for(int fst=2;fst<nums.length;fst++){
+            if(nums[fst]!=nums[slow-2]){
+                nums[slow]=nums[fst];
+                slow++;
             }
         }
-        return l;
+        return slow;
+        
     }
 }
